@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>感恩节贺卡</title>
+
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          name="viewport">
+    <!-- Mobile Devices Support @begin -->
+
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Mobile Devices Support @end -->
+    <link href="./huer_files/style.css" rel="stylesheet" type="text/css">
+    <script src="./huer_files/jQuery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./huer_files/player_min.js"></script>
+    <script type="text/javascript" src="./QueryString.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var audio = document.getElementById('bgsound');
+            audio.play();
+        });
+    </script>
+
+    <style type="text/css">
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            vertical-align: middle;
+
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div style="z-index: 0; position: absolute; left:0; width: 100%;height: 100%;">
+    <img src="./img/index4_bg.jpg" class="center" style=" position: relative;left:0;width: 100%;">
+</div>
+<input type="hidden" id="id" name="id" value="31">
+
+<div class="spinner" style="display: none;">
+    <div class="rect1">
+    </div>
+    <div class="rect2">
+    </div>
+    <div class="rect3">
+    </div>
+    <div class="rect4">
+    </div>
+    <div class="rect5">
+    </div>
+</div>
+<div class="wrapper">
+    <audio id="bgsound" src="http://mp.cnsunys.com/sdj.mp3" autoplay="autoplay" loop="loop"></audio>
+    <div class="css3_gif">
+
+        <!--
+        <div class="moon">
+            <img src="./huer_files/moon.png">
+        </div>
+        <div class="star_img1">
+            <img src="./huer_files/star_2.png">
+        </div>
+        <div class="star_img2">
+            <img src="./huer_files/star_1.png">
+        </div>
+        <div class="star_img3">
+            <img src="./huer_files/star_2.png">
+        </div>
+        <div class="star_img4">
+            <img src="./huer_files/star_1.png">
+        </div>
+        <div class="star_img5">
+            <img src="./huer_files/star_1.png">
+        </div>
+        <div class="star_img6">
+            <img src="./huer_files/star_1.png">
+        </div>
+        <div class="star_img7">
+            <img src="./huer_files/star_2.png">
+        </div>
+        <div class="star_img8">
+            <img src="./huer_files/star_1.png">
+        </div>
+        <div class="star_img9">
+            <img src="./huer_files/star_2.png">
+        </div>
+        <div class="cloud_1">
+            <img src="./huer_files/cloud_1.png">
+        </div>
+        <div class="cloud_2">
+            <img src="./huer_files/cloud_1.png">
+        </div>
+        <div class="cloud_3">
+            <img src="./huer_files/cloud_2.png">
+        </div>
+
+        -->
+    </div>
+    <div class="cardcontent_box">
+        <div class="cardcontent_topbg" style="display: none">
+            <!--   <img src="./huer_files/cardcontent_topbg.png">  -->
+        </div>
+        <div class="cardcontent">
+            <h1 class="cardFrom_id" id="MEcardFrom_id">
+                接收人
+            </h1>
+
+            <div class="cardBody_id" id="MEcardBody_id">
+
+                有时，母亲的手送我一程 有时，母亲的心送我一程 其实，送与不送都一样 我早已经知道 无论是刮风下雨，还是冰天雪地 都是你心头的牵挂
+            </div>
+            <p class="cardTo_id" id="MEcardTo_id">
+                发送人
+            </p>
+
+            <script type="text/javascript">
+                var men = getQueryStringByName("n");
+                if (men != "") {
+                    men = decodeURI(men);
+                    $("#MEcardFrom_id").html(men);
+                }
+
+                var mb = getQueryStringByName("b");
+                if (mb != "") {
+                    mb = decodeURI(mb);
+                    $("#MEcardBody_id").html(mb);
+                }
+                var mf = getQueryStringByName("f");
+                if (mf != "") {
+                    mf = decodeURI(mf);
+                    $("#MEcardTo_id").html(mf);
+                }
+                //alert(ddd);
+            </script>
+
+
+            <a href="javascript:void(0)" class="make_btn">点击定制</a>
+        </div>
+
+    </div>
+</div>
+<div class="popup_box" style="display: none;">
+    <div class="mModal">
+        <a id="mymark" style="height: 1000px;" href="javascript:void(0)"></a>
+    </div>
+    <div class="popup_bg">
+        <h2 class="popup_title">
+            订制感恩节贺卡文字
+        </h2>
+
+        <div class="popup_box_li">
+            <input id="FromName" name="" type="text" class="popup_tobox_id" value="我的朋友">
+        </div>
+
+        <div class="popup_box_li">
+            <a href="javascript:void(0)" class="arrow_left">
+                <img src="./huer_files/arrow.png">
+            </a> <a href="javascript:void(0)" class="arrow_right">
+            <img src="./huer_files/arrow.png">
+        </a>
+
+            <div class="popup_bodytext_id_bg" style="display: block;" id="en">
+                <textarea name="" cols="" rows="" class="popup_bodytext_id">
+                    痛苦的不是过去，而是记忆；幸福的不是等待，而是回味。感恩节，让我们忘记痛苦，感激所有关心和爱着我们的每一个人，祝他们平安、幸福。
+                </textarea>
+            </div>
+            <div class="popup_bodytext_id_bg" id="cn" style="display: none;">
+                <textarea name="" cols="" rows="" class="popup_bodytext_id">!</textarea>
+            </div>
+
+            <div contenteditable="true" class="popup_bodytext_id" id="en" style="display: none">
+                痛苦的不是过去，而是记忆；幸福的不是等待，而是回味。感恩节，让我们忘记痛苦，感激所有关心和爱着我们的每一个人，祝他们平安、幸福。
+            </div>
+            <div contenteditable="true" class="popup_bodytext_id" id="cn" style="display: none">
+                <p>
+                    感恩节，没什么礼物送给你，就送你一条短信。
+                </p>
+
+                <p>
+                    祝你年年潇洒，季季平安，月月发财，
+                </p>
+
+                <p>
+                    天天健康，时时甜蜜，刻刻幸福，
+                </p>
+
+                <p>
+                    分分好运，秒秒如意，辈辈成才，代代兴旺。
+                </p>
+
+                <p>
+                    一品阳光
+                </p>
+            </div>
+        </div>
+
+        <div class="popup_box_li">
+            <input id="ToName" name="" type="text" class="popup_tobox_id" value="你的朋友">
+        </div>
+        <div class="btn_box">
+            <a href="javascript:void(0)" class="popup_btn_id">生成贺卡</a><a href="javascript:void(0)"
+                                                                         class="popup_btncancle_id">取消</a>
+
+            <div class="clear">
+            </div>
+
+            <input type="text"  id="userInput" value="" style="display: none;" >
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var Content=""; // 用户输入的内容
+
+        // 保存转发的内容 以便编辑
+        $("#userInput").val($("#MEcardBody_id").html());
+
+        $(".make_btn").click(function () {
+            $(".popup_box").show();
+
+            if( $("#userInput").val() != ""){
+                var Content = $("#userInput").val();
+
+                $(".popup_bodytext_id_bg").each(function () {
+                    if ($(this).css("display") != "none") {
+                         $(this).find("textarea").val(Content);
+                    }
+                })
+            }
+        })
+        $(".popup_btncancle_id").click(function () {
+            $(".popup_box").hide();
+        })
+        $(".arrow_left,.arrow_right").click(function () {
+            if ($("#en").css("display") == "block") {
+                //WKL     $("#FromName").attr("placeholder", "To");
+                $("#FromName").attr("value", "我的朋友");
+                //WKL      $("#ToName").attr("placeholder", "From");
+                $("#ToName").attr("value", "你的朋友");
+                $("#en").hide();
+                $("#cn").show();
+            } else {
+            //WKL    $("#FromName").attr("placeholder", "收件人");
+                $("#FromName").attr("value", "我的朋友");
+            //WKL    $("#ToName").attr("placeholder", "发件人");
+                $("#ToName").attr("value", "你的朋友");
+                $("#en").show();
+                $("#cn").hide();
+            }
+        })
+        $(".popup_btn_id").click(function () {
+            var toName = $.trim($("#FromName").val());
+            var fromName = $.trim($("#ToName").val());
+            //var Content = "";
+
+            $(".popup_bodytext_id_bg").each(function () {
+                if ($(this).css("display") != "none") {
+                    Content = $(this).find("textarea").val();
+                }
+            })
+
+            if (!fromName || !toName || !Content) {
+                alert("内容不能为空,请重新输入!");
+                return false;
+            } else {
+                /*var strdata = {
+                 action: "CreateGreetCard",
+                 toName: encodeURI(toName),
+                 fromName: fromName,
+                 content: encodeURI(Content)
+                 };*/
+
+                $("#userInput").val(Content);
+
+                window.location.href = "?n=" + encodeURI(toName) + "&b=" + encodeURI(Content) + "&f=" + encodeURI(fromName);
+
+
+                // $.get('creat.php?t=' + Math.random(), strdata, function (res) {
+                ///    if (res != "") {
+                //      window.location.href = "index.php?n=" + toName + "&b=" + Content + "&f=" + fromName;
+                //    }
+                // })
+            }
+        })
+    })
+
+    var onBridgeReady = function () {
+
+
+        var appdesc = "";
+
+        if (mb != "") {
+            appdesc = men + ':痛苦的不是过去，而是记忆；幸福的不是等待，而是回味。感恩节，让我们忘记痛苦，感激所有关心和爱着我们的每一个人，祝他们平安、幸福。';
+        }
+        else {
+            appdesc = "痛苦的不是过去，而是记忆；幸福的不是等待，而是回味。感恩节，让我们忘记痛苦，感激所有关心和爱着我们的每一个人，祝他们平安、幸福。";
+        }
+        var appTitle = '感恩节贺卡';
+        if (mf != "") {
+            appTitle = mf + '感恩节贺卡';
+        }
+
+
+        var appId = '',
+                imgUrl = 'http://mp.cnsunys.com/heka/huer_files/fx.png',
+                link = location.href,
+                title = appTitle,
+                desc = appdesc;
+
+        WeixinJSBridge.call('showOptionMenu');
+
+        //
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                'img_url': imgUrl,
+                'img_width': '640',
+                'img_height': '640',
+                'link': link,
+                'desc': desc,
+                'title': title
+            }, function (res) {
+            });
+        });
+        //
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                'img_url': imgUrl,
+                'img_width': '640',
+                'img_height': '640',
+                'link': link,
+                'desc': desc,
+                'title': desc
+            }, function (res) {
+            });
+        });
+
+        var audio = document.getElementById('bgsound');
+        audio.play();
+    };
+
+    if (document.addEventListener) {
+        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    } else if (document.attachEvent) {
+        document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    }
+
+
+</script>
+
+
+</body>
+</html>

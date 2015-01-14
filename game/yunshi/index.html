@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html class="ui-viewport-640 pc" lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="互联网招聘,移动互联网招聘,社交招聘,IT招聘,微信招聘,微博招聘,豆瓣招聘,跳槽,高薪职位">
+    <meta name="description" content="周伯通招聘，最靠谱的招聘社区">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <title>2015，你的事业签是什么？小周为你卜一卦~</title>
+    <!--<script async="" src="./js/alog.mobile.min.js"></script>-->
+    <!--<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
+    <script>
+        var SITE_URL = 'http://m.jobtong.com/';
+        var API_URL = 'http://api.jobtong.com';
+        var OPEN_SITE = null;
+
+        var UID = 0;
+        var ROLE = "";
+        var USER = null;
+    </script>
+    <script>
+        // class
+        !function (navigator) {
+            var userAgent = navigator.userAgent;
+            documentElement = document.documentElement;
+            if (userAgent.match(/micromessenger\/5/gi)) {
+                documentElement.className += " mobile wx_mobile wx_mobile_5";
+            } else if (userAgent.match(/micromessenger/gi)) {
+                documentElement.className += " mobile wx_mobile";
+            } else if (userAgent.match(/ucbrowser/gi)) {
+                documentElement.className += " mobile uc_mobile";
+            } else if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
+                documentElement.className += " mobile";
+            } else if (userAgent.toLowerCase().match(/msie/gi) && ( parseFloat(userAgent.toLowerCase().match(/msie ([0-9]{1,}[\.0-9]{0,})/i)[1] || 999) < 9 )) {
+                documentElement.className += " pc pc-ie pc-ie8";
+            } else if (userAgent.toLowerCase().match(/msie/gi) || navigator.msPointerEnabled || navigator.pointerEnabled) {
+                documentElement.className += " pc pc-ie";
+            } else {
+                documentElement.className += " pc";
+            }
+        }(navigator);
+        // meta
+        !function (userAgent) {
+            var screen_w = parseInt(window.screen.width),
+                    scale = screen_w / 640;
+            if (/Android (\d+\.\d+)/.test(userAgent)) {
+                var version = parseFloat(RegExp.$1);
+                document.write(version > 2.3
+                        ? '<meta name="viewport" content="width=640, minimum-scale = ' + scale + ", maximum-scale = " + scale + ', target-densitydpi=device-dpi">'
+                        : '<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+            }
+        }(navigator.userAgent);
+    </script>
+    <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <link href="/Public/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Mobile/Tpl/Public/single-page/css/base.css?v201501082123" rel="stylesheet" type="text/css">
+    <link href="/Mobile/Tpl/Public/single-page/css/single.css?v201501082123" rel="stylesheet" type="text/css">
+    <script src="/Public/hashchange/hashchange.js"></script>
+    <script src="/Public/jquery/jquery-1.10.2.min.js"></script>
+    <script src="/Public/jquery-cookie/jquery.cookie.js"></script>
+    <script src="/Mobile/Tpl/Public/js/share.js?v201501082123"></script>
+
+    <!--
+    <script type="text/javascript" name="baidu-tc-cerfication"
+            src="http://apps.bdimg.com/cloudaapi/lightapp.js#b0bad27284f8addc2c9ac8676d423eb3"></script>
+    <script type="text/javascript">window.bd && bd._qdc && bd._qdc.init({app_id: '9097eda4d05f21a80a580b43'});</script>
+
+    <script>window.devtoolPort = 3001</script>
+    <script src="chrome-extension://oofgjnalpjodkfmfomihdlchiiacnman/inject.js"></script>
+    <script src="//m.baidu.com/lightapp/navbar/get?m_code=9097eda4d05f21a80a580b43&amp;callback=xnBBBBBCallBackFn97451"
+            async="" defer="" type="text/javascript" charset="utf-8"></script>
+    <script src="http://developer.baidu.com/lightapp/statis/cloudaapi?callback=printlogCallback&amp;data=ak%5Bnull%5D%20url%5Bhttp%3A%2F%2Fm.jobtong.com%2FFestival%2FnewYear2015%23rd%3Fsukey%3Dfd39034cdd3ad7432c0c11420276404c1ce8c3317112f9b4b98f7a26a1a681e29eb621ce0f4abeb4ef39ecb1a00b8dd9%5D%20apis%5BsmartBar%7Capp%7Cpush%7Csocialshare%5D%20platform%5Bother%5D%20lastTime%5B1421124526823%5D%20imei%5B440778300315%5D%20"></script>
+    <script type="text/javascript" charset="utf-8"
+            src="http://apps.bdimg.com/cloudaapi/pkg/helper-utils-moplus-monitor_4a89f6c.js"
+            _md_="_anymoore_http://apps.bdimg.com/cloudaapi/pkg/helper-utils-moplus-monitor_4a89f6c.js"></script>
+    <script>window.devtoolTabKey = 'ODM='</script>
+    <script type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/cloudaapi/pkg/push-smartBar_a566ae9.js"
+            _md_="_anymoore_http://apps.bdimg.com/cloudaapi/pkg/push-smartBar_a566ae9.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/cloudaapi/pkg/app-socialshare_68f36fa.js"
+            _md_="_anymoore_http://apps.bdimg.com/cloudaapi/pkg/app-socialshare_68f36fa.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/cloudaapi/pkg/account-pay_1c1b06a.js"
+            _md_="_anymoore_http://apps.bdimg.com/cloudaapi/pkg/account-pay_1c1b06a.js"></script>
+
+    -->
+</head>
+
+<body class=" hPC" style="zoom: 1;"><img src="/Mobile/Tpl/Public/single-page/images/new-year-2015/share.jpg" width="320"
+                                         height="320" style="position: fixed; top: -500px;"><!-- container -->
+<div class="container">
+    <div class="content">
+        <div class="content-body">
+            <div class="single-page-container js-single-page-container">
+                <script>
+                    var MOBILE_HOME_PAGE = 'http://m.jobtong.com';
+                    var WEIXIN_HOME_PAGE = 'http://weixin.jobtong.com';
+                    var WX_UID = 0;
+                    // 检查是否微信登陆
+                    if (navigator.userAgent.match(/micromessenger/gi) && !WX_UID) {
+                        location.href = WEIXIN_HOME_PAGE + "/login?callback=" + encodeURIComponent(location.href);
+                    }
+                </script>
+                <link href="/Mobile/Tpl/Public/single-page/css/modules/new-year-2015.css?v#{{#STATIC_VERSION#}}#"
+                      rel="stylesheet" type="text/css">
+                <script src="/Mobile/Tpl/Public/single-page/js/modules/new-year-2015.js?v#{{#STATIC_VERSION#}}#"></script>
+                <div class="relative ui-draw-lots js-draw-lots">
+                    <div class="ui-space-top"></div>
+                    <div class="text-center ui-head"><img
+                            src="/Mobile/Tpl/Public/single-page/images/new-year-2015/head.png" width="527" height="156">
+                    </div>
+                    <div class="ui-space-center"></div>
+                    <div class="relative ui-body">
+                        <div class="absolute center ui-center"><img class="ui-jobtong"
+                                                                    src="/Mobile/Tpl/Public/single-page/images/new-year-2015/jobtong.png"
+                                                                    width="328" height="481"><img
+                                class="absolute center slowly-shake ui-lots js-lots"
+                                src="/Mobile/Tpl/Public/single-page/images/new-year-2015/lots.png?v#{{#STATIC_VERSION#}}#"
+                                width="137" height="201"><img class="absolute center ui-lot js-lot"
+                                                              src="/Mobile/Tpl/Public/single-page/images/new-year-2015/lot.png?v#{{#STATIC_VERSION#}}#"
+                                                              width="922" height="273"></div>
+                    </div>
+                </div>
+                <div class="relative ui-show-lot js-show-lot bounce-in-up hide">
+                    <div class="ui-space-top"></div>
+                    <div class="center nowrap ui-head"><img class="vertical-middle ui-user-face js-user-face" src=""
+                                                            width="86" height="86"><span
+                            class="c-white font-size-28 vertical-middle js-user-name"></span><span
+                            class="c-white font-size-28 vertical-middle">的2015事业签是：</span></div>
+                    <div class="ui-space-center"></div>
+                    <div class="relative center ui-body"><img class="js-lot" src="" width="543" height="700"><a
+                            class="absolute block center text-center font-size-36 c-white ui-share-btn js-share-btn hide"
+                            href="javascript:;">分享给小伙伴们</a><a
+                            class="absolute block center text-center font-size-36 c-white ui-join-btn js-join-btn hide"
+                            href="/Festival/newYear2015">查看我的事业签</a><a
+                            class="absolute block text-center font-size-24 c-white ui-site-btn" href="/"
+                            target="_blank">周伯通帮你立即转运&gt;&gt;</a></div>
+                </div>
+                <script>
+                    NewYear2015.$drawLots = $(".js-draw-lots");
+                    NewYear2015.$showLot = $(".js-show-lot");
+                    NewYear2015.init();
+                </script>
+            </div>
+        </div>
+        <div class="content-sidebar js-content-sidebar" style="display: block;">
+            <div class="sidebar-section qrcode-info">
+                <div class="section-detail"><p class="text-center sidebar-title">微信“扫一扫”分享朋友圈</p>
+
+                    <p id="qr-code" class="text-center qr-code"><img width="158" height="158"
+                                                                     src="http://s.jiathis.com/qrcode.php?url=http://m.jobtong.com/Festival/newYear2015">
+                    </p></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display:none;">
+    <script type="text/javascript">    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcbd1c666d9ecfce2daab16095311bc1c' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script src=" http://hm.baidu.com/h.js?cbd1c666d9ecfce2daab16095311bc1c" type="text/javascript"></script>
+</div>
+<script>
+    // URL 二维码图
+    setTimeout(function () {
+        /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()) || $("#qr-code").html('<img width="158" height="158" src="http://s.jiathis.com/qrcode.php?url=' + window.location.href.split("#")[0] + '">').closest(".js-content-sidebar").show();
+    }, 0);
+</script>
+<style type="text/css" id="xnSmartBarCacheCSSID">
+
+    .baiduServiceBottomBar.noDis {
+        display: none !important
+    }
+
+    .baiduServiceBottomBar.iphoneDevice > ul > li .count {
+        font-size: 10px;
+        line-height: 12px;
+        height: 12px;
+        padding: 0px 2px;
+        top: -3px;
+        right: -8px;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: none;
+        outline: none
+    }
+
+    .baiduServiceBottomBar.hackIFrame iframe {
+        top: 0px;
+        -webkit-transform: translateZ(5px);
+        transform: translateZ(5px)
+    }
+
+    .baiduServiceBottomBar {
+        overflow: visible;
+        line-height: 1;
+        border-top: 1px solid #c0c0c0;
+        position: fixed;
+        z-index: 200;
+        width: 100%;
+        bottom: 0px;
+        background-color: rgba(242, 242, 242, 0.94);
+        background-image: -moz-linear-gradient(rgba(248, 248, 248, 0.94), rgba(242, 242, 242, 0.94));
+        background-image: -o-linear-gradient(rgba(248, 248, 248, 0.94), rgba(242, 242, 242, 0.94));
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(248, 248, 248, 0.94)), color-stop(1, rgba(242, 242, 242, 0.94)));
+        background-image: -webkit-linear-gradient(rgba(248, 248, 248, 0.94), rgba(242, 242, 242, 0.94));
+        background-image: -ms-linear-gradient(rgba(248, 248, 248, 0.94), rgba(242, 242, 242, 0.94));
+        background-image: linear-gradient(rgba(248, 248, 248, 0.94), rgba(242, 242, 242, 0.94))
+    }
+
+    .baiduServiceBottomBar div {
+        overflow: visible
+    }
+
+    .baiduServiceBottomBar div, .baiduServiceBottomBar span, .baiduServiceBottomBar object, .baiduServiceBottomBar iframe, .baiduServiceBottomBar h1, .baiduServiceBottomBar h2, .baiduServiceBottomBar h3, .baiduServiceBottomBar h4, .baiduServiceBottomBar h5, .baiduServiceBottomBar h6, .baiduServiceBottomBar p, .baiduServiceBottomBar a, .baiduServiceBottomBar em, .baiduServiceBottomBar img, .baiduServiceBottomBar b, .baiduServiceBottomBar i, .baiduServiceBottomBar dl, .baiduServiceBottomBar dt, .baiduServiceBottomBar dd, .baiduServiceBottomBar ol, .baiduServiceBottomBar ul, .baiduServiceBottomBar li, .baiduServiceBottomBar fieldset, .baiduServiceBottomBar form, .baiduServiceBottomBar label, .baiduServiceBottomBar table, .baiduServiceBottomBar caption, .baiduServiceBottomBar tbody, .baiduServiceBottomBar tfoot, .baiduServiceBottomBar thead, .baiduServiceBottomBar tr, .baiduServiceBottomBar th, .baiduServiceBottomBar td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline
+    }
+
+    .baiduServiceBottomBar p, .baiduServiceBottomBar div, .baiduServiceBottomBar h1, .baiduServiceBottomBar h2, .baiduServiceBottomBar h3, .baiduServiceBottomBar h4, .baiduServiceBottomBar h5, .baiduServiceBottomBar h6 {
+        -webkit-text-size-adjust: none
+    }
+
+    .baiduServiceBottomBar ul, .baiduServiceBottomBar li, .baiduServiceBottomBar a {
+        vertical-align: middle
+    }
+
+    .baiduServiceBottomBar ol, .baiduServiceBottomBar ul {
+        list-style: none;
+        overflow: visible
+    }
+
+    .baiduServiceBottomBar .qingIcon {
+        width: 22px;
+        height: 22px;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAqCAMAAADs1AnaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1YTA3ZWU4Yy0yNTUzLTQzOTktOTliMC0wYTYxYzc3NjY1ZGYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzI1MDJCODkzOENGMTFFNDg2NjdDNzU2MzQwOTc2NzUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzI1MDJCODgzOENGMTFFNDg2NjdDNzU2MzQwOTc2NzUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4YzRhMmIzNy03ODM4LTQyZTMtODI4Yy1lYjc1OTQyNjQwZWQiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDoyOGIzNTdlNi03NTM5LTExNzctODViNy1hYTQ4NGY2ZjI2ZWIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Wt27tAAABmFBMVEXvX2pvs+r/+/vnECDlAhP0kpnwZ3EOcM383uBkRIPmCBj96+z+9fb6z9L4vMDpKznoHCvyfIX2p6397O360NPtUl7rPUrmBxjrPkv83+H2pqz4vsL2qK7lARLnDx/sQE3oHSzyfoftU17ye4TwaHIBeNn+9PXnESHoGyqJh7ZYY6Wq0vNRZan7+fsQcc36ztEHdNQZhd5+u+zc7PrW6fnvZW/4+/7pKDZsVY+1GTsOcs/0lZxhcrB3t+shasH96erv9/34ub5DZK1PouVgca/qM0EOcs7pKjjhAhTp4utmXZr//PwGe9sMftwDetrnFybKvtTpLDrrO0joGSgvkeHtUFzLv9QXhN36zdDpIzLgAxb6+PvlAxS+FzaGv+3H4fddqecCd9hGneTA3vYUg93tUV0Dd9hWS47QCyPoIjGYyPDvXmk9ZbH0k5qv1fN7OG5iVZRVpebrOkegzfH1+v4MctDl8fsIfNshid+MiLXy+P3VCB/n4euslrj8/f+ISHnqLTv0j5Y2leLoITDg7/sAeNrlABH///9RYd6zAAAAiHRSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AGLfWDwAAAZZJREFUeNrc1FV7wjAUBuDiDIr7cDbm7u7u7u7u7kb422spPU0F2PW+qyZ5nz5N0nOIuCD2/nqDcI7gD225SoSUan0aJFcpUCIKlTwVMpoQxGSURFoH4sWhFSHSokOC6CwkH1nNsPa9CI9mK4YMTpinPnm4OZ8dNRbNJZFerWQnk5u3qf306GA/GttsGaQQbJuKE46x/Aotnd/G6PQ9lhLctkM+/Gxe22JsSgjYS5jESM0WkLL3ARZFPBjpkI2xZO/iGSEGHXox8na0A685WaWXGYRfzvYMkIez5LIA/VwCGV2ri0uhm6p7MBt39DGKUfE8kK915kLESMaSymv2alOikdaneCbUXY39bqkQ78f9D+j4LyjQKY28wXEOITSrFSNPBKGVXheHkCsnj4/IMFOuig9ETEMhFGTjyBeChSCvpIYA2d0wGfiU84ozK4kSXYqJv7ZdUOYMkp9CmaOpBVHDSKCKSewrJVpPAmnw/Uo0MR7a1Uq3wwYOpWiHVJYLmxiUprFSeemJajK0aDoTXW67cO5XgAEAv5+0kJ0BN/wAAAAASUVORK5CYII=");
+        margin: 10px auto;
+        background-size: 100% 100%
+    }
+
+    .baiduServiceBottomBar .qingBtn {
+        width: 48px;
+        height: 48px;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd
+    }
+
+    .baiduServiceBottomBar .qingIcon, .baiduServiceBottomBar .qingBtn {
+        display: block
+    }
+
+    .baiduServiceBottomBar * {
+        vertical-align: middle;
+        box-sizing: border-box
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-parent {
+        position: relative
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-container {
+        position: absolute;
+        bottom: 100%;
+        display: none;
+        z-index: -90;
+        width: 113%;
+        background-color: rgba(255, 255, 255, 0.94);
+        background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94));
+        background-image: -o-linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94));
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0.94)), color-stop(1, rgba(255, 255, 255, 0.94)));
+        background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94));
+        background-image: -ms-linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94));
+        background-image: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94));
+        left: initial !important;
+        margin-left: -7px;
+        border: 1px solid #c0c0c0;
+        border-radius: 2px;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.12);
+        margin-bottom: 12px;
+        -webkit-transform: scale(1)
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-container ul, .baiduServiceBottomBar .baidu-xn-pop-container li {
+        list-style: none
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-container ul {
+        padding: 0px 9px;
+        height: auto
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-container ul > li:not(:last-of-type) {
+        border-bottom: 1px solid #dddddd
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-container li.vote {
+        height: 43px
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-container ul > li {
+        height: 36px
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-container ul > li a {
+        padding: 1px 0;
+        font-size: 14px
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-container.show, .baiduServiceBottomBar .show > .baidu-xn-pop-container {
+        display: block;
+        z-index: -90
+    }
+
+    .baiduServiceBottomBar .noDis {
+        display: none !important
+    }
+
+    .baiduServiceBottomBar a {
+        text-decoration: none;
+        color: #001526
+    }
+
+    .baiduServiceBottomBar > ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -moz-box;
+        display: box;
+        width: 100%;
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        box-pack: center;
+        box-align: center;
+        border: 0 #fafafb solid;
+        border-width: 1px 0 0 1px
+    }
+
+    .baiduServiceBottomBar > ul > li {
+        display: block;
+        width: 3em;
+        -webkit-box-flex: 1;
+        flex: 1;
+        -ms-flex: 1;
+        -moz-box-flex: 1;
+        text-align: center;
+        font-size: 10px
+    }
+
+    .baiduServiceBottomBar > ul > li a {
+        font-size: 16px;
+        padding: 6px 0px 4px;
+        display: inline-block;
+        display: inline-block;
+        width: 100%;
+        line-height: 34px;
+        height: 43px;
+        text-align: center
+    }
+
+    .baiduServiceBottomBar > ul > li a p > span.text-char {
+        text-shadow: 0 1px #fff
+    }
+
+    .baiduServiceBottomBar > ul > li .icon {
+        width: 18px;
+        height: 18px;
+        display: block;
+        margin: 0px auto 4px;
+        background-size: 100% 100%;
+        vertical-align: middle;
+        position: relative
+    }
+
+    .baiduServiceBottomBar > ul > li .count-outer {
+        position: relative;
+        width: auto;
+        display: inline-block;
+        line-height: inherit
+    }
+
+    .baiduServiceBottomBar > ul > li .count {
+        background-color: #f43b3b;
+        color: #fff;
+        border-radius: 1px;
+        padding: 0px 2px;
+        position: absolute;
+        font-size: 10px;
+        line-height: 12px;
+        height: 12px;
+        top: -3px;
+        right: -10px;
+        font-style: normal;
+        text-shadow: none;
+        outline: none
+    }
+
+    .baiduServiceBottomBar > ul > li .baidu-xn-pop-container .count {
+        top: 3px
+    }
+
+    .baiduServiceBottomBar > ul li.showMoreBtn {
+        display: none;
+        position: relative
+    }
+
+    .baiduServiceBottomBar > ul .comment .count {
+        right: -9px
+    }
+
+    .baiduServiceBottomBar > ul .pop-tip {
+        -webkit-transform: rotateZ(45deg);
+        transform: rotateZ(45deg);
+        width: 6px;
+        height: 6px;
+        z-index: 300;
+        top: -15px;
+        left: -55%;
+        position: absolute;
+        border: 1px solid #c0c0c0;
+        background-color: rgba(255, 255, 255, 0.94);
+        display: none
+    }
+
+    .baiduServiceBottomBar > ul .pop-tip.align-right {
+        margin-left: 100%;
+        border-left: 0px;
+        border-top: 0px
+    }
+
+    @media only screen and (max-width: 400px) {
+        .baiduServiceBottomBar .show-more-buttons > li:nth-of-type(n+4), .baiduServiceBottomBar .show-more-buttons-lg > li:nth-of-type(n+4) {
+            display: none
+        }
+
+        .baiduServiceBottomBar .show-more-buttons > li.showMoreBtn, .baiduServiceBottomBar .show-more-buttons-lg > li.showMoreBtn {
+            display: block
+        }
+    }
+
+    @media only screen and (min-width: 400px) and (max-width: 480px) {
+        .baiduServiceBottomBar .show-more-buttons-lg > li:nth-of-type(n+5) {
+            display: none
+        }
+
+        .baiduServiceBottomBar .show-more-buttons-lg > li.showMoreBtn {
+            display: block
+        }
+    }
+
+    @media only screen and (max-device-width: 600px) {
+        .baiduServiceBottomBar #mobile-phone-detector {
+            display: block
+        }
+    }
+
+    .baiduServiceBottomBar [data-action=ecomBottomBar-vote] {
+        position: relative
+    }
+
+    .baiduServiceBottomBar [data-action=ecomBottomBar-vote] .bd_vote {
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        top: 0px
+    }
+
+    .baiduServiceBottomBar [data-action=ecomBottomBar-vote] .text-char {
+        display: inline-block;
+        -webkit-transform: translateZ(0px);
+        transform: translateZ(0px)
+    }
+
+    .baiduServiceBottomBar [data-action=ecomBottomBar-vote] .bd_vote iframe {
+        position: relative
+    }
+
+    .baiduServiceBottomBar > ul > li:last-of-type .baidu-xn-pop-container {
+        right: 10px
+    }
+
+    .baiduServiceBottomBar > ul > li:first-of-type .baidu-xn-pop-container {
+        left: 8px !important;
+        margin-left: 0px
+    }
+
+    .baiduServiceBottomBar .baidu-xn-pop-parent:after {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        width: 12px;
+        height: 3px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 1px solid #c0c0c0;
+        border-left: 0px;
+        border-right: 0px;
+        margin: 6px 0px 6px -6px;
+        content: ""
+    }
+
+    .baiduServiceBottomBar .qingBtn {
+        display: none
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle.hideContent {
+        border-top: transparent;
+        width: auto
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle.hideContent .qingBtn {
+        display: block
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle.hideContent .icon-container {
+        display: none
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -moz-box;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        box-pack: center;
+        box-align: center
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle .qingBtn {
+        display: block
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle > ul > li:first-of-type .baidu-xn-pop-container {
+        left: initial !important;
+        margin-left: -10%
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle [data-action=ecomBottomBar-showMore] {
+        max-width: 50px
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle [data-action=ecomBottomBar-showMore] .baidu-xn-pop-container {
+        width: 180%
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle [data-action=ecomBottomBar-showMore] .pop-tip.align-right {
+        margin-left: 120%
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle.showContent {
+        width: 100%
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle.showContent .qingBtn {
+        border: 1px solid transparent;
+        border-right: 1px solid #cdcdcd
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle.showContent .qingIcon {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjRENkJCMzY0NkJGMTFFNEI4NTc5NjE5QjFBMjJERTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjRENkJCMzc0NkJGMTFFNEI4NTc5NjE5QjFBMjJERTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NEQ2QkIzNDQ2QkYxMUU0Qjg1Nzk2MTlCMUEyMkRFNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2NEQ2QkIzNTQ2QkYxMUU0Qjg1Nzk2MTlCMUEyMkRFNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgNHqQMAAAA8UExURdLS0tzc3Onp6fj4+ExMTHt7e2xsbNXV1fz8/Hl5ef39/dTU1E1NTfn5+ejo6Nra2tPT0z8/PzMzM////3wYFWQAAAAUdFJOU/////////////////////////8AT0/nEQAAAT5JREFUeNrMl9sSgjAMRLcFRFFu6f//q1ekjLRJ3XHGvtI9QLpJEwRy4W8A3nUlss75DaBqRC6tXd9eRJp+BfQHua15suqn+b7/UL0BJ5ESwlMvcloAXqSEsOhF/AvgpISw6sW9AMe6gBDp6+MSg/NsJkT6+bwe42QlxBsRG8lI+NS/nWgi7OjXXDAQ9vRRMqmEXX2cjQphX79J5ywh9RDBRkg+gm1bGg3TizKfBsuv5oIDQ7CywUVQCfnjRdAIij2gWG7SDArNtJrBoaWNlmIIRkIqRRFshGSRQDAR0kUGlvKVK3O/A7C/wAaRPUbWSKyV2WRi05ktKGxJY4sqW9bZi4W92tjLlb3e2QaDbXHYJott89hGk2116WabbvfpgYMeeULFDl2Psa8uHfuqjROHsWzwHIe/m52/XlcBBgCFdCWM9zfnWwAAAABJRU5ErkJggg==)
+    }
+
+    .baiduServiceBottomBar.showQingIconStyle.showContent .icon-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -moz-box;
+        dislay: box;
+        -webkit-box-flex: 1;
+        flex: 1;
+        -ms-flex: 1;
+        -moz-box-flex: 1
+    }
+
+    .baiduServiceBottomBar.double-scale > ul > li a {
+        line-height: 68px;
+        height: 86px;
+        font-size: 32px;
+        padding: 12px 0 4px
+    }
+
+    .baiduServiceBottomBar.double-scale > ul > li .baidu-xn-pop-container {
+        width: 113%
+    }
+
+    .baiduServiceBottomBar.double-scale > ul > li .baidu-xn-pop-container ul {
+        padding: 0px 18px
+    }
+
+    .baiduServiceBottomBar.double-scale > ul > li .baidu-xn-pop-container ul > li {
+        height: 72px;
+        line-height: 60px;
+        width: 100%
+    }
+
+    .baiduServiceBottomBar.double-scale > ul > li .baidu-xn-pop-container ul > li a {
+        padding: 0px;
+        line-height: 72px;
+        height: 72px
+    }
+
+    .baiduServiceBottomBar.double-scale > ul > li .count {
+        font-size: 20px;
+        line-height: 20px;
+        height: 20px;
+        padding: 0 6px;
+        top: 6px;
+        right: -20px;
+        text-shadow: none;
+        outline: none;
+        border-radius: 4px
+    }
+
+    .baiduServiceBottomBar.double-scale .baidu-xn-pop-parent:after {
+        width: 24px;
+        height: 6px;
+        margin: 12px 0 12px -12px;
+        content: ""
+    }
+
+    @media only screen and (max-width: 800px) {
+        .baiduServiceBottomBar.double-scale .show-more-buttons > li:nth-of-type(n+4), .baiduServiceBottomBar.double-scale .show-more-buttons-lg > li:nth-of-type(n+4) {
+            display: none
+        }
+
+        .baiduServiceBottomBar.double-scale .show-more-buttons > li.showMoreBtn, .baiduServiceBottomBar.double-scale .show-more-buttons-lg > li.showMoreBtn {
+            display: block
+        }
+    }
+
+    @media only screen and (min-width: 800px) and (max-width: 960px) {
+        .baiduServiceBottomBar.double-scale .show-more-buttons-lg > li:nth-of-type(n+5) {
+            display: none
+        }
+
+        .baiduServiceBottomBar.double-scale .show-more-buttons-lg > li.showMoreBtn {
+            display: block
+        }
+    }
+
+    .smb-user-guide-wrapper {
+        position: fixed;
+        z-index: 9999;
+        background: rgba(15, 15, 15, 0.8);
+        top: 83px;
+        width: 238px;
+        height: 195px;
+        left: 50%;
+        margin-left: -119px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-family: sans-serif
+    }
+
+    .smb-user-guide-wrapper .bg-pic {
+        margin-top: 24px;
+        height: 131px;
+        background: url(http://m.baidu.com/static/search/siteapp/lego/use_guide.png) center no-repeat;
+        background-size: 208px 131px
+    }
+
+    .smb-user-guide-wrapper .queryX {
+        position: absolute;
+        left: 44px;
+        top: 90px
+    }
+
+    .smb-user-guide-wrapper .closeX {
+        display: block;
+        margin: 8px auto;
+        color: #fff;
+        width: 110px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center
+    }
+
+    .baiduServiceBottomBar-toast-container {
+        position: fixed;
+        z-index: 99999999;
+        width: 100%;
+        bottom: 50px;
+        text-align: center
+    }
+
+    .baiduServiceBottomBar-toast-container .toast-text {
+        min-width: 40%;
+        max-width: 80%;
+        overflow: hidden;
+        word-break: break-all;
+        word-wrap: nowrap;
+        text-overflow: ellipsis;
+        background-color: rgba(0, 0, 0, 0.75);
+        opacity: 0;
+        -webkit-transition: opacity 2s linear 0s;
+        border-radius: 5px;
+        color: #fff;
+        padding: 10px;
+        margin: 0px auto;
+        font-size: 16px
+    }
+
+    .baiduServiceBottomBar-toast-container.show .toast-text {
+        opacity: 1
+    }
+
+    .baiduServiceBottomBar-toast-container.noDis {
+        display: none !important
+    }
+
+    body, html {
+        padding: 0px;
+        margin: 0px
+    }
+
+    /**
+     * 用于将 css 以内联 js 的形式插入到页面中去
+     */
+</style>
+<div class="baiduServiceBottomBar noDis"><a class="qingBtn" data-action="ecomBottomBar-iconBtn"
+                                            onclick="javascript:void(0);"><i class="qingIcon"></i></a>
+    <ul class="showCount-3 icon-container">
+        <li><a data-action="ecomBottomBar-comment" onclick="javascript:void(0);" class="hackTJMark"><p
+                class="count-outer"><span class="text-char">评价</span><span class="count noDis"></span></p></a></li>
+        <li><a data-action="qingBottomBarShare" onclick="javascript:void(0);"><p class="count-outer"><span
+                class="text-char">分享</span><span class="count noDis"></span></p></a></li>
+        <li><a data-action="ecomBottomBar-vote" onclick="javascript:void(0);"><p class="count-outer"><span
+                class="text-char">赞</span><span class="count noDis"></span></p>
+
+            <div class="bd_vote" data-inited="1">
+                <iframe id="vote142112512242731" style="border: none; width: 100%; height: 100%; display: block;"
+                        src="http://openapi.baidu.com/widget/social/like?app_id=1918568&amp;third_source_id=e32a582be12e38dfec6446fa8a1159c4&amp;url=http%3A%2F%2Fm.jobtong.com%2FFestival%2FnewYear2015%23rd%3Fsukey%3Dfd39034cdd3ad7432c0c11420276404c1ce8c3317112f9b4b98f7a26a1a681e29eb621ce0f4abeb4ef39ecb1a00b8dd9&amp;cssLink=1&amp;id=vote142112512242731"></iframe>
+            </div>
+        </a></li>
+        <li class="showMoreBtn baidu-xn-pop-parent" data-action="ecomBottomBar-showMore"><a
+                onclick="javascript:void(0);">更多</a>
+
+            <div class="noDis">
+                <div class="baidu-xn-pop-container">
+                    <div class="pop-content">
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="pop-tip align-right"></div>
+            </div>
+        </li>
+    </ul>
+    <!-- hack form mobile phone detect --><span id="mobile-phone-detector"></span></div>
+<script type="text/javascript" charset="utf-8"
+        src="http://apps.bdimg.com/developer/static/1417096041977/social-widget/js/vote.js" async=""></script>
+</body>
+</html>

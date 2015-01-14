@@ -1,0 +1,25 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 2,
+    "engineDir":"../../frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d", "extensions"],
+
+    "jsList" : [
+        "src/resource.js",
+        "src/GameConfig.js",
+        "src/ControlLayer.js",
+        "src/Joypad.js",
+        "src/KeyMap.js",
+        "src/Box.js",
+        "src/Bandit.js",
+        "src/Davis.js",
+        "src/cusloading.js",
+        "src/app.js"
+    ]
+}

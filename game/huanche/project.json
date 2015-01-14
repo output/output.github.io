@@ -1,0 +1,25 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : false,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 1,
+    "engineDir":"../frameworks/cocos2d-html5",
+
+    "modules" : ["core", "actions", "menus","progress-timer", "cocos2d", "extensions", "external"],
+
+    "jsList" : [
+        "src/resource.js",
+        "src/register.js",
+        "src/Layer1.js",
+        "src/Layer2.js",
+        "src/Layer3.js",
+        "src/Layer4.js",
+        "src/Layer5.js",
+        "src/Layer6.js",
+        "src/MainScene.js",
+        "src/GameConfig.js"
+    ]
+}

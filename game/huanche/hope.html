@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="viewport" content="target-densitydpi=high-dpi,width=device-width"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta name="360-fullscreen" content="true"/>
+    <title></title>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/QueryString.js"></script>
+    <script src="./lib/WeixinApi.js"></script>
+
+<style type="text/css">
+
+    body {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+    #mianDiv{
+        z-index: 5;
+        /*position: absolute;*/
+        /*left:0;*/
+        /*top:0;*/
+        width: 100%;
+        height: 100%;
+
+        position:absolute;
+        top:0;
+        left:0;
+
+        overflow: hidden;
+    }
+
+/*
+    .wrapper {
+        max-width: 640px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+*/
+
+    #content{
+
+        position: absolute;
+
+
+        left: 0;
+        top: 15%;
+        width: 100%;
+
+        overflow: hidden;
+
+        text-align: center;
+        color: #ffd700;
+        font-size: 35px;
+
+        z-index: 7;
+    }
+
+    #friend{
+
+        position: absolute;
+
+        /*background: #ff0000;*/
+
+        left: 0;
+        top: 75%;
+        width: 100%;
+
+        bottom:  0;
+
+        overflow: hidden;
+
+        text-align: center;
+        color: #ffd700;
+        font-size: 30px;
+
+        z-index: 9;
+    }
+
+
+
+    #banner{
+        position: absolute;
+
+        background: #000000;
+
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+
+        overflow: hidden;
+
+        text-align: center;
+        color: #ffd700;
+
+        z-index: 7;
+    }
+
+    #banner_logo{
+        height: 100%;
+        text-align: left;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #banner_title{
+        height: 100%;
+        text-align: center;
+        font-size: 28px;
+        color: #ffd700;
+        font-weight: bolder;
+        margin-top: 8px;
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #logo{
+        height: 100%;
+    }
+
+
+</style>
+</head>
+<body>
+
+
+
+<div style="z-index: 0; position: absolute; left:0; top: 0; width: 100%; height: 100%; ">
+    <img id="bgimg" src="./res/index/bg_1.jpg" class="center" style=" position: absolute; top:30%; left:5%; width: 90%;">
+</div>
+
+
+<div id="mianDiv" class="wrapper">
+    <div id="content"></div>
+
+    <div id="friend"></div>
+
+    <div id="banner">
+        <div id="banner_logo">
+            <img id="logo" src="./res/page6/dawanju-logo2.png" />
+        </div>
+        <div id="banner_title">
+            玩车人的社区
+        </div>
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var friend = getQueryStringByName("f");
+    if (friend != "") {
+        friend = decodeURI(friend);
+        $("#friend").html(friend);
+    }
+
+    var content = getQueryStringByName("c");
+    if (content != "") {
+        content = decodeURI(content);
+        $("#content").html(content);
+    }
+    var bgimg = getQueryStringByName("img");
+    if (bgimg != "") {
+        bgimg = decodeURI(bgimg);
+
+//        $("#mianDiv").css("background-image", "./res/index/bg_" + bgimg + ".jpg");
+        $("#bgimg").attr("src" , "./res/index/bg_" + bgimg + ".jpg");
+    }
+</script>
+
+<script>
+    var href = window.location.href, base = href,
+            lastpt = href.lastIndexOf("."),
+            last = href.lastIndexOf("/");
+    if (last != -1 && lastpt > last)
+        base = base.substr(0, last);
+    // 微信分享的数据
+    window.wxData = {
+        "appId": "", // 服务号可以填写appId
+        "imgUrl": 'http://2.wklgame.sinaapp.com/game/mjbl/icon.png',
+        "link": window.location.href,
+        "desc": "大玩具许愿精灵",
+        "title": "大玩具许愿精灵"
+    };
+
+
+    WeixinApi.ready(function (Api) {
+        // 分享的回调
+        var wxCallbacks = {
+            ready: function () {
+            },
+            cancel: function (resp) {
+            },
+            fail: function (resp) {
+            },
+            confirm: function (resp) {
+            },
+            all: function (resp) {
+            }
+        };
+        Api.shareToFriend(wxData, wxCallbacks);
+        Api.shareToTimeline(wxData, wxCallbacks);
+        Api.shareToWeibo(wxData, wxCallbacks);
+    });
+</script>
+
+</body>
+</html>

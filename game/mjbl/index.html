@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>阻击加班，赢取免加班令牌</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+
+    <!--
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no ,maximum-scale=1.0"/>
+
+        <meta name="viewport" content="width=720px,user-scalable=no,initial-scale=1,maximum-scale=1.0"/>
+    -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+
+    <script>
+        //alert(document.body.clientWidth  + "---" + document.body.clientHeight);
+    </script>
+</head>
+<body style="padding:0; margin: 0; ">
+<canvas id="gameCanvas" width="640" height="960"></canvas>
+<script src="../frameworks/cocos2d-html5/CCBoot.js"></script>
+<!--
+<script type="text/javascript" src="cocos2d-js-v3.2-full.js" charset="UTF-8"></script>
+-->
+<!--
+<script type="text/javascript" src="cocos2d-js-v3.2.js" charset="UTF-8"></script>
+-->
+
+<!--
+<script src="frameworks/cocos2d-html5/CCBoot.js"></script>
+-->
+<script src="main.js"></script>
+<script src="WeixinApi.js"></script>
+
+<script>
+    var href = window.location.href, base = href,
+            lastpt = href.lastIndexOf("."),
+            last = href.lastIndexOf("/");
+    if (last != -1 && lastpt > last)
+        base = base.substr(0, last);
+    // 微信分享的数据
+    window.wxData = {
+        "appId": "", // 服务号可以填写appId
+        "imgUrl": 'http://2.wklgame.sinaapp.com/game/mjbl/icon.png',
+        "link": window.location.href,
+        "desc": "一周最美是周五，周五最烦是加班！",
+        "title": "阻击加班，赢取免加班令牌"
+    };
+
+
+    WeixinApi.ready(function (Api) {
+        // 分享的回调
+        var wxCallbacks = {
+            ready: function () {
+            },
+            cancel: function (resp) {
+            },
+            fail: function (resp) {
+            },
+            confirm: function (resp) {
+            },
+            all: function (resp) {
+            }
+        };
+        Api.shareToFriend(wxData, wxCallbacks);
+        Api.shareToTimeline(wxData, wxCallbacks);
+        Api.shareToWeibo(wxData, wxCallbacks);
+    });
+</script>
+
+</body>
+</html>

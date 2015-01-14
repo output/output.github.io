@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>张小盒一步之遥</title>
+	 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+	<link rel="stylesheet" type="text/css" href="http://game.9g.com/css/game9g.css">
+  <script src="http://game.9g.com/js/game9g.js"></script>
+  <script src="http://9g.game6.cn/js/jquery-1.8.3.min.js"></script>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+		.player-button {
+	position: fixed;
+	z-index: 10000;
+	display: block;
+	top: 10px;
+	right: 10px;
+	width: 60px;
+	height: 60px;
+	background: url(res/player-button.png) -60px 0;
+	cursor: pointer; /*background-position: center;*/
+	background-repeat: no-repeat;
+}
+
+.player-button-stop {
+	background-position: 0 0
+}
+
+.player-tip {
+	position: absolute;
+	top: 5px;
+	left: -140px;
+	width: 120px;
+	background: rgba(59, 89, 114, .6);
+	border-radius: 4px 0 0 4px;
+	font-size: 10px;
+	color: #ccc;
+	line-height: 20px;
+	text-align: center
+}
+
+.player-tip:after {
+	content: "";
+	position: absolute;
+	right: -32px;
+	width: 0;
+	height: 0;
+	border-left: 16px solid rgba(59, 89, 114, .6);
+	border-top: 10px solid transparent;
+	border-right: 16px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+    </style>
+</head>
+<body style="padding:0; margin: 0; background: #000;">
+<canvas id="gameCanvas" width="800" height="450"></canvas>
+<audio id="bgmusic" src="audio/bg.mp3" loop ></audio>
+<a href="javascript:;" class="player-button " id="controleMusic">
+</a>
+<script src="cocos2d-js-v3.2.js"></script>
+<script src="frameworks/cocos2d-html5/CCBoot.js"></script>
+<script src="main.js"></script>
+<script>
+	var nomusic=false;
+	$("#controleMusic").click(function(e){
+					e.preventDefault();
+					e.stopPropagation();	
+					var bgmusic=document.getElementById("bgmusic");
+					if(!$(this).hasClass("player-button-stop")){
+						$(this).addClass("player-button-stop");
+						try{
+							console.dir("静音");
+							nomusic=true;
+							
+								if(bgmusic.played){
+									bgmusic.pause();
+								}
+							
+						}catch(e){
+						
+						}
+					}else{
+						$(this).removeClass("player-button-stop");
+						try{
+							console.dir("正常");
+							nomusic=false;
+							if(bgmusic.paused){
+								bgmusic.play();
+							}
+							
+						}catch(e){
+						
+						}
+					}
+					return false;
+				});
+</script>
+ <script language=javascript>
+        var game9g = new Game9G("zxhybzy");
+        game9g.shareData.title = "张小盒一步之遥-9G游戏";
+        game9g.shareData.content = "张小盒一步之遥-9G游戏";
+
+		function goHome(){
+			window.location=game9g.homeurl;
+		}
+		function clickMore(){
+			 if((window.location+"").indexOf("f=zf",1)>0){
+			 	window.location = game9g.gzurl;
+			  }
+			  else{
+			 	goHome();
+			  }
+		}
+		function dp_share(){
+			game9g.share();
+		}
+		function dp_Ranking(){
+			window.location=game9g.homeurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		function dp_submitScore(score){
+			if(score>3){
+				game9g.score =parseInt(score);
+				game9g.scoreName ="走了"+score+"步";
+				game9g.shareData.title ="史上最虐心游戏<<张小盒一步之遥>>我走了"+score+"步,来挑战我吧！！-【9G游戏】"; 
+				game9g.utils.shareConfirm("史上最虐心游戏<<张小盒一步之遥>>你走了"+score+"步,快通知一下小伙伴吧！", dp_share); 
+			}
+		}
+	</script>
+	<div style="display: none;">
+		<script type="text/javascript">
+			game9g.utils.tongji();
+		</script>						
+	</div>
+</body>
+</html>

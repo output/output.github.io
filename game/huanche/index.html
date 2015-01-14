@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>大玩具许愿精灵</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="viewport" content="target-densitydpi=high-dpi,width=device-width"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        body {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+        }
+
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            /*-webkit-tap-highlight-color: rgba(0, 0, 0, 0);*/
+
+            overflow: hidden;
+        }
+
+        /*背景透明文本框*/
+        .boxtrans {
+            background-color: transparent;
+            /*border-bottom: 1px solid #cccccc;*/
+            border-bottom: 1px solid #ffd700;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-top-width: 0px;
+            border-top-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            padding: 0px;
+            margin: 0;
+        }
+
+        /* 下划线 输入框*/
+        .boxLine {
+            /*border-color: #878787;*/
+
+            border-color: #ffd700;
+
+            border-style: solid;
+            border-top-width: 0px;
+            border-right-width: 0px;
+            border-bottom-width: 1px;
+            border-left-width: 0px;
+
+            color: #ffd700;
+        }
+
+        #friendname {
+            height: 50px;
+            width: 80%;
+        }
+
+        #saycontent {
+            height: 100px;
+            width: 80%;
+            margin-top: 10px;
+
+            color: black;
+        }
+
+        .imgBorder {
+            background-color: transparent;
+            /*border-bottom: 1px solid #cccccc;*/
+            border: 5px solid #ffd700;
+            padding: 0px;
+            margin: 0;
+        }
+    </style>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/cocos2d-js-v3.2.js"></script>
+    <!--<script src="lib/QueryString.js"></script>-->
+
+    <script type="text/javascript">
+        function selectNo(id) {
+            $("#selectedImg").val(id);
+
+            for (var i = 1; i <= 16; i++) {
+                if (i == id) {
+                    continue;
+                }
+                $("#bg_" + i).removeClass("imgBorder");
+            }
+
+            $("#bg_" + id).addClass("imgBorder");
+        }
+
+        $(document).ready(function () {
+            $("#readmore").click(function () {
+                $(this).hide();
+//                $("#moreImg").slideDown("slow");
+                $("#moreImg").show();
+            });
+        });
+        /*
+         function onSubmitClick(){
+         if($("#selectedImg").val() == "" || $("#selectedImg").val() == "0" ){
+         alert("alertText");
+         $("#alertItem").slideDown("slow").delay(5000).slideUp("slow");
+         $("#alertText").text("请输选择配图哦");
+         }
+         }
+         */
+    </script>
+
+</head>
+<body style="padding:0; margin: 0; height: 100%; width: 99%;">
+<script>
+    //    if(window.navigator.userAgent.indexOf("MicroMessenger") == -1){
+    //        window.location.href="http://devcon.cocos.com/";
+    //    }
+</script>
+<canvas id="gameCanvas" width="640" height="831"></canvas>
+<div id="regPage" class="regPage tc hide">
+    <div id="alertItem" class="alertArea hide">
+        <div class="alertBorder">
+            <div id="alertText" class="alertText">您的报名信息已经成功提交</div>
+            <div></div>
+            <input type="button" onclick="window.onOkClick()" class="okBtn"/>
+        </div>
+    </div>
+    <div class="regBg regBorder">
+        <img src="res/close.png" class="closeBtn" onclick="window.onCloseClick();">
+        <!--
+        <div class="tc">
+            <img class="logo" src="res/sharelogo.png"/>
+        </div>
+        -->
+        <form id="registerForm" method="post" target="" action="./hope.html">
+            <ul class="tc regList" style="text-align: left;margin-left: 12%; width: 90%;">
+                <li>
+                    <div>
+                        <span style="font-size: 1.7em;">见面不开口，就在这里告诉他吧</span>
+                        <br>
+                        <span style="font-size: 2.5em;">换车又不是换妻！</span>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span class="tPoint">1、</span>
+                        <span class="tName">请在横线处填写他的姓名</span><br>
+                        <span>
+                            <input id="friendname" class="inputItem inputItem_normal boxtrans boxLine" name="friendname"
+                                   placeholder="请输入他的姓名" type="text"/>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span class="tPoint">2、</span>
+                        <span class="tName">请说出你的换车宣言</span><br>
+                        <span>
+                        <input id="saycontent" class="inputItem inputItem_normal" name="saycontent"
+                             placeholder="你的车借我玩两天吧！" type="text"/>
+                        <!--
+                         <textarea id="saytext" class="inputItem inputItem_normal boxtrans "  placeholder="你的车借我玩两天吧！">
+                        -->
+                            </textarea>
+
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span class="tPoint">3、</span>
+                        <span class="tName">请选择配图</span><br>
+                        <span>
+                            <div style="column-rule:3px outset #ff0000;">
+                                <img id="bg_1" src="./res/index/bg_1.jpg" style="width: 26%" onclick="selectNo(1)">
+                                <img id="bg_2" src="./res/index/bg_2.jpg" style="width: 26%" onclick="selectNo(2)">
+                                <img id="bg_3" src="./res/index/bg_3.jpg" style="width: 26%" onclick="selectNo(3)">
+                                <img id="bg_4" src="./res/index/bg_4.jpg" style="width: 26%" onclick="selectNo(4)">
+                                <img id="bg_5" src="./res/index/bg_5.jpg" style="width: 26%" onclick="selectNo(5)">
+                                <img id="bg_6" src="./res/index/bg_6.jpg" style="width: 26%" onclick="selectNo(6)">
+
+                                <div id="moreImg" style="display: none;">
+                                    <img id="bg_7" src="./res/index/bg_7.jpg" style="width: 26%" onclick="selectNo(7)">
+                                    <img id="bg_8" src="./res/index/bg_8.jpg" style="width: 26%" onclick="selectNo(8)">
+                                    <img id="bg_9" src="./res/index/bg_9.jpg" style="width: 26%" onclick="selectNo(9)">
+                                    <img id="bg_10" src="./res/index/bg_10.jpg" style="width: 26%"
+                                         onclick="selectNo(10)">
+                                    <img id="bg_11" src="./res/index/bg_11.jpg" style="width: 26%"
+                                         onclick="selectNo(11)">
+                                    <img id="bg_12" src="./res/index/bg_12.jpg" style="width: 26%"
+                                         onclick="selectNo(12)">
+                                    <img id="bg_13" src="./res/index/bg_13.jpg" style="width: 26%"
+                                         onclick="selectNo(13)">
+                                    <img id="bg_14" src="./res/index/bg_14.jpg" style="width: 26%"
+                                         onclick="selectNo(14)">
+                                    <img id="bg_15" src="./res/index/bg_15.jpg" style="width: 26%"
+                                         onclick="selectNo(15)">
+                                    <img id="bg_16" src="./res/index/bg_16.jpg" style="width: 26%"
+                                         onclick="selectNo(16)">
+                                </div>
+                            </div>
+                            <div style="text-align: center; width: 80%;">
+                                <input id="readmore" type="button" value="更多配图"
+                                       style="width: 100%; height: 50px; background: #ffd700; margin-top: 10px; font-size: 1.2em; color: #000000;"/>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+
+                <li>
+                    <div style="text-align: center; margin-left: -12%;margin-top: 50px;">
+                        <span style="text-align: center; width: 99%;">
+                            <img src="./res/index/qrcode.png" style="margin: auto;"/>
+                        </span>
+                        <span style="text-align: center;">
+                            <br>
+                            下载“大玩具”APP<br>
+                            参与“我要换车”活动，<br>
+                            晒出你的爱车，<br>
+                            这里有更多人想和你换车！！<br>
+                        </span>
+                    </div>
+                </li>
+
+                <!--
+                <li>
+                    <div>
+                        <span class="tPoint">*</span>
+                        <span class="tName">职位：</span>
+                        <span><input id="position" class="inputItem inputItem_normal" placeholder="请填写职位"
+                                     name="position" type="text"/></span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span class="tPoint invsible">*</span>
+                        <span class="tName">需求：</span>
+                        <span><input id="extra" class="inputItem inputItem_normal" placeholder="希望了解的技术需求" name="extra"
+                                     type="text"/></span>
+                    </div>
+                </li>
+                -->
+            </ul>
+            <input type="hidden" name="from" value="mobile"/>
+        </form>
+        <!--
+        <div class="tTips_area">
+            <div class="tTips">
+                <span  style="text-align: center; width: 100%;">
+                    <br/>
+                    <input id="makeOne" type="button" value="生成我的心愿" style=" height: 50px; background: #ffd700; font-size: 1em; color: #000000;" />
+                </span>
+            </div>
+        </div>
+        -->
+        <div class="tc btnArea">
+
+            <span class="tPoint" style="text-align: center; width: 100%;">
+                <input id="submit" type="submit" value="生成我的心愿" onclick="onSubmitClick()"
+                       style="width: 80%; height: 60px; background: #ffd700; font-size: 1.5em; color: #000000;"/>
+            </span>
+
+            <!--<input type="submit" onclick="onSubmitClick()" class="submitBtn" value=""/>-->
+        </div>
+    </div>
+</div>
+<div class="hide">
+    <audio id="myAudio" loop="true"></audio>
+    <input type="hidden" id="selectedImg" value="0">
+</div>
+<!--<script src="../frameworks/cocos2d-html5/CCBoot.js"></script>-->
+<script src="main.js"></script>
+<script src="./lib/WeixinApi.js"></script>
+<script>
+
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?ebfdd9d3a34b09e952592e03954c9a76";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+
+    // 微信分享的数据
+    window.wxData = {
+        "appId": "", // 服务号可以填写appId
+        "imgUrl": "http://upyun.cocimg.com/cocoachina/cocos_logo.png",
+        "link": "http://devcon.cocos.com/weixin/",
+        "desc": "大玩具许愿精灵",
+        "title": "大玩具许愿精灵"
+    };
+
+    WeixinApi.ready(function (Api) {
+        // 分享的回调
+        var wxCallbacks = {
+            ready: function () {
+            },
+
+            cancel: function (resp) {
+            },
+            fail: function (resp) {
+            },
+            confirm: function (resp) {
+            },
+            all: function (resp) {
+            }
+        };
+        Api.shareToFriend(wxData, wxCallbacks);
+        Api.shareToTimeline(wxData, wxCallbacks);
+        Api.shareToWeibo(wxData, wxCallbacks);
+    });
+</script>
+</body>
+</html>

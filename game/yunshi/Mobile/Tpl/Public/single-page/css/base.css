@@ -1,0 +1,325 @@
+/*!
+ * jobtong.com
+ * Slider Base CSS
+ * @author Weichuan Chen
+ */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline
+}
+
+html {
+    line-height: 1
+}
+
+ol,ul {
+    list-style: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+caption,th,td {
+    font-weight: normal;
+    vertical-align: middle
+}
+
+q,blockquote {
+    quotes: none
+}
+
+q:before,q:after,blockquote:before,blockquote:after {
+    content: "";
+    content: none
+}
+
+a img {
+    border: none
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
+    display: block
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: "微软雅黑","Microsoft YaHei",Helvetica,"STHeiti STXihei","Microsoft JhengHei",Tohoma,Arial
+}
+
+body {
+    color: #333;
+    -webkit-backface-visibility: hidden
+}
+
+body.body-fixed-bottom {
+    padding-bottom: 40px
+}
+
+a {
+    color: #333;
+    background: transparent;
+    text-decoration: none
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 22px
+}
+
+h3 {
+    font-size: 15px;
+    line-height: 18px
+}
+
+button,input[type='number'],input[type='text'],input[type='password'],input[type='email'],select,textarea {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ddd
+}
+
+.relative {
+    position: relative
+}
+
+.absolute {
+    position: absolute
+}
+
+.font-size-12 {
+    font-size: 12px
+}
+
+.font-size-14 {
+    font-size: 14px
+}
+
+.font-size-18 {
+    font-size: 18px
+}
+
+.font-size-24 {
+    font-size: 24px
+}
+
+.font-size-28 {
+    font-size: 28px
+}
+
+.font-size-30 {
+    font-size: 30px
+}
+
+.font-size-32 {
+    font-size: 32px
+}
+
+.font-size-36 {
+    font-size: 36px
+}
+
+.font-size-40 {
+    font-size: 40px
+}
+
+.font-size-44 {
+    font-size: 44px
+}
+
+.font-size-48 {
+    font-size: 48px
+}
+
+.font-size-52 {
+    font-size: 52px
+}
+
+.font-size-56 {
+    font-size: 56px
+}
+
+.font-size-62 {
+    font-size: 62px
+}
+
+.font-size-68 {
+    font-size: 68px
+}
+
+.font-size-86 {
+    font-size: 86px
+}
+
+.font-size-94 {
+    font-size: 94px
+}
+
+.font-size-100 {
+    font-size: 100px
+}
+
+.font-size-132 {
+    font-size: 132px
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.c-orange {
+    color: #f90
+}
+
+.c-orange-dark {
+    color: #f15a0c
+}
+
+.c-green {
+    color: #06bf04
+}
+
+.c-red {
+    color: #ed5050
+}
+
+.c-white {
+    color: #fff
+}
+
+.c-gray {
+    color: #ddd
+}
+
+.c-gray-dark {
+    color: #999
+}
+
+.c-black {
+    color: #333
+}
+
+.c-yellow {
+    color: #f09000
+}
+
+.c-blue {
+    color: #147dff
+}
+
+.c-blue-dark {
+    color: #050d20
+}
+
+.center {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.break-word {
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+.nowrap {
+    white-space:nowrap;
+}
+
+.link {
+    color: #07d
+}
+
+.link:link,.link:hover,.link:visited,.link:active {
+    color: #07d
+}
+
+.clearfix:before,.clearfix:after {
+    content: " ";
+    display: table
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.pull-left {
+    float: left
+}
+
+.pull-right {
+    float: right
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+.show {
+    display: block
+}
+
+.hide {
+    display: none
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
+}
+
+.vertical-middle {
+    vertical-align: middle;
+}
+
+.separator {
+    color: #666
+}
+
+.wrapper {
+    width: 320px;
+    margin: 0 auto
+}
+
+.content {
+    width: 320px;
+    margin: 0 auto
+}
