@@ -1,0 +1,129 @@
+@charset "utf-8";
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu
+{ margin:0; padding:0; }
+body { font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif; font-size: 12px; }
+a { text-decoration:none; }
+img { border: none; }
+.rel { position: relative; }
+.abs { position: absolute; }
+.fl { float: left; }
+.fr { float: right; }
+ul li { list-style: none; }
+.clr { line-height: 0; height: 0; clear: both; font-size: 0; overflow: hidden}
+.clearfix:after { display: block; height: 0; visibility: hidden; clear: both; content: "."; }
+.no_select { -moz-user-select:none; -webkit-user-select:none; user-select:none;}
+html { -webkit-text-size-adjust: none; } /* 禁用iPhone中Safari的字号自动调整 */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block;} /* 设置HTML5元素为块 */
+img { max-width: 100%; height: auto; }/* 设置图片视频等自适应调整 */
+strong, span,label { display: inline-block; vertical-align: middle; }
+select { -webkit-appearance: none; line-height: 24px; border-radius: 0; /* mobile-select设置*/ }
+.hide { display: none; }
+
+/*fm*/
+.fm_stage { background-color: #000000; }
+.fm1 { background: #FFFFFF url("../img/fm1_bg.jpg") 50% 50%; }
+.fm2 { background: #FFFFFF url("../img/fm2_bg.jpg") 50% 50%; }
+.fm3 { background: #FFFFFF url("../img/fm3_bg.jpg") 50% 50%; }
+.fm5 { background: #FFFFFF url("../img/fm4_bg.jpg") 50% 50%; }
+
+/*修改部分*/
+.dword{position:absolute;left:17%; top:41%; z-index:1;}
+#word{width:196px; height:64px; border:none; background:none; text-align:left; line-height:20px; font-size:14px;letter-spacing : 2px;}
+.dfrom{position:absolute; left:17%; top:58%; z-index:1;}
+#tfrom{width:115px; height:28px; border:none; background:none; text-align:left; line-height:20px;  font-size:14px;letter-spacing : 2px;}
+.dsend{position:absolute; left:31%; top:82%; cursor:pointer; z-index:1;}
+#tsend{ width:121px; height:56px;}
+
+.share_mask { position: absolute; display: none; z-index:2;}
+/*修改部分*/
+
+.share_tip { position: absolute; right: 6px; display: none; }
+.share_btn { width: 121px; height: 36px; background: url("../img/btn_share.gif") no-repeat; background-size: 121px 36px; position: absolute; margin: -18px 0 0 -60px; left: 50%; bottom: 18%;}
+.fm { background-repeat: no-repeat; background-size: auto 100%; }
+.fm2.cover { background: #FFFFFF url("../img/cover.jpg") 50% 50%; background-size: 100% 100%; }
+/*fm4_form*/
+.fm4 { background: #FFFFFF url("../img/fm4_bg.jpg") no-repeat; background-size: 100% auto; }
+.info_box { position: absolute; top: 52%; left: 50%; width: 232px; margin: -125px 0 0 -116px; }
+.fm4_form { background-color: #036EB6; text-align: center; padding: 14px 0;}
+.input_name,.input_phone { width: 161px; height: 24px; margin-bottom: 10px; padding: 0 5px 0 30px; background-repeat: no-repeat; background-position: 0 50%; background-size: 26px auto; border: 1px solid #DBD8D3; border-radius: 3px; border-color: #DBD8D3 #EBEAE8 #F9F5F2 #D0D0D0;  }
+.input_name { background-image: url("../img/input_name.gif"); }
+.input_phone { background-image: url("../img/input_phone.gif"); }
+.sub_btn { width: 91px; height: 22px; border: none; background: url("../img/btn_sub.gif") no-repeat; background-size: 91px auto; margin-top: 5px;}
+.fm4_word1 { margin-top: 17px; text-align: center; color: #63A4D1; font-size: 14px;}
+/*snow*/
+.piece .snow3,.piece .snow2,.piece .snow1 { display:block; position:absolute; background-repeat:no-repeat; background-position:0 0; background-size:contain; }
+.piece .snow1 { background-image: url('../img/snow1.png'); }
+.piece .snow1.style1 { width:25px; height:57px }
+.piece .snow1.style2 { width:20px; height:46px }
+.piece .snow1.style3 { width:15px; height:34px }
+.piece .snow2 { background-image: url('../img/snow2.png'); }
+.piece .snow2.style1 { width:35px; height:38px }
+.piece .snow2.style2 { width:25px; height:28px }
+.piece .snow2.style3 { width:15px; height:17px }
+.piece .snow3 { background-image: url('../img/snow3.png'); }
+.piece .snow3.style1 { width: 25px; height: 57px }
+.piece .snow3.style2 { width: 20px; height: 46px }
+.piece .snow3.style3 { width: 15px; height: 34px }
+@-webkit-keyframes snow {
+    0% { opacity: .6; -webkit-transform: translateY(0) }
+    20% { opacity: 1 }
+    100% { opacity: 0; -webkit-transform: translateY(600px) }
+}
+/*up_arrow*/
+.up_arrow { width: 30px; position: absolute; left: 50%; margin-left: -15px; bottom: 10px; }
+.cur .up_arrow {
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-animation: up_arrow 1.5s ease-out infinite;
+}
+@-webkit-keyframes up_arrow {
+    0% { -webkit-transform: translateY(0); opacity: 0; }
+    50% { -webkit-transform: translateY(-150%); opacity: 1;}
+    100% { -webkit-transform: translateY(0); opacity: 0; }
+}
+
+
+
+/*cover*/
+#cover { display: none;
+    -webkit-transition: opacity 0.8s linear;
+    transition: opacity 0.8s linear;
+    opacity: 1; }
+#cover.hiding { opacity: 0; }
+/*#cover.hiding { -webkit-animation: hide_cover 1.5s linear; -webkit-animation-fill-mode: forwards; }
+@-webkit-keyframes hide_cover {
+    0% { opacity: 1; }
+    100% { opacity: 0.3; }
+}*/
+.cover_hand {
+    position: absolute; bottom: 9%; left: 49%; width: 13px; margin: 0 0 -7px -6px; z-index: 100;
+    -webkit-animation: cover_hand 0.5s ease-out infinite;
+}
+@-webkit-keyframes cover_hand {
+    0% { -webkit-transform: translate3d(0,0,0); }
+    50% { -webkit-transform: translate3d(40%,0,0);}
+    100% { -webkit-transform: translate3d(0,0,0); }
+}
+/*music*/
+.music,.music.off{ width: 30px; height: 31px; position: fixed; left: 15px; top: 15px; z-index: 20; background: url(../img/player-button.png) no-repeat 0 0; background-size: 60px auto; }
+.music.on{ background-position: -30px 0; }
+/*======fanzhuan base=======*/
+.fm_stage {
+    -webkit-perspective: 1500px; perspective: 1500px;
+    overflow: hidden;
+}
+.fm_wrap {
+    position: relative;
+    -webkit-transform-style: preserve-3d; transform-style: preserve-3d;
+    -webkit-perspective: 1500px; perspective: 1500px;
+    backface-visibility: hidden;
+}
+.fm {
+    position: absolute; visibility: hidden;
+    -webkit-transform-style: preserve-3d; transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+}
+.fm_mid,.fm_active { visibility: visible; z-index: 1; }
+.fm_top { transform-origin: 50% bottom 0px; -webkit-transform-origin: 50% bottom 0px; }
+.fm_bottom { transform-origin: 50% 0px 0px;  -webkit-transform-origin: 50% 0px 0px; }
+.boc_logo { position: absolute; width: 100%; text-align: center; bottom: 10px; }
